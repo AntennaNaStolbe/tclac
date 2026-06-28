@@ -19,7 +19,7 @@ ClimateTraits tclacClimate::traits() {
 	// Ответственно заявляю, что это все я взял у christoph5180
 	if (this->supported_modes_.empty()) {
 		traits.add_supported_mode(climate::CLIMATE_MODE_OFF);
-		traits.add_supported_mode(climate::CLIMATE_MODE_AUTO);
+		traits.add_supported_mode(climate::CLIMATE_MODE_HEAT_COOL);
 	} else {
 		for (auto mode : this->supported_modes_)
 			traits.add_supported_mode(mode);
@@ -132,9 +132,9 @@ void tclacClimate::readData() {
 		uint8_t swingmodeswitch = SWING_MODE_MASK & dataRX[SWING_POS];
 
 		switch (modeswitch) {
-			case MODE_AUTO:
-				this->mode = climate::CLIMATE_MODE_AUTO;
-				break;
+	case MODE_AUTO:
+		this->mode = climate::CLIMATE_MODE_HEAT_COOL;
+		break;
 			case MODE_COOL:
 				this->mode = climate::CLIMATE_MODE_COOL;
 				break;
@@ -147,8 +147,8 @@ void tclacClimate::readData() {
 			case MODE_HEAT:
 				this->mode = climate::CLIMATE_MODE_HEAT;
 				break;
-			default:
-				this->mode = climate::CLIMATE_MODE_AUTO;
+		default:
+			this->mode = climate::CLIMATE_MODE_HEAT_COOL;
 		}
 
 		if ( dataRX[FAN_QUIET_POS] & FAN_QUIET) {
@@ -278,7 +278,7 @@ void tclacClimate::takeControl() {
 			dataTX[7] += 0b00000000;
 			dataTX[8] += 0b00000000;
 			break;
-		case climate::CLIMATE_MODE_AUTO:
+		case climate::CLIMATE_MODE_HEAT_COOL:
 			dataTX[7] += 0b00000100;
 			dataTX[8] += 0b00001000;
 			break;

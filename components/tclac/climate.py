@@ -66,7 +66,7 @@ SUPPORTED_SWING_MODES_OPTIONS = {
 
 SUPPORTED_CLIMATE_MODES_OPTIONS = {
     "OFF": ClimateMode.CLIMATE_MODE_OFF,  # Доступен всегда
-    "AUTO": ClimateMode.CLIMATE_MODE_AUTO,  # Доступен всегда
+    "HEAT_COOL": ClimateMode.CLIMATE_MODE_HEAT_COOL,  # AC auto (решает греть/холодить, температура регулируется)
     "COOL": ClimateMode.CLIMATE_MODE_COOL,
     "HEAT": ClimateMode.CLIMATE_MODE_HEAT,
     "DRY": ClimateMode.CLIMATE_MODE_DRY,
@@ -158,7 +158,7 @@ CONFIG_SCHEMA = cv.All(
             cv.Optional(CONF_HORIZONTAL_SWING_MODE, default="LEFT_RIGHT"): cv.ensure_list(cv.enum(HORIZONTAL_SWING_DIRECTION_OPTIONS, upper=True)),
             cv.Optional(CONF_SUPPORTED_PRESETS,default=["NONE","ECO","SLEEP","COMFORT",],): cv.ensure_list(cv.enum(SUPPORTED_CLIMATE_PRESETS_OPTIONS, upper=True)),
             cv.Optional(CONF_SUPPORTED_SWING_MODES,default=["OFF","VERTICAL","HORIZONTAL","BOTH",],): cv.ensure_list(cv.enum(SUPPORTED_SWING_MODES_OPTIONS, upper=True)),
-            cv.Optional(CONF_SUPPORTED_MODES,default=["OFF","AUTO","COOL","HEAT","DRY","FAN_ONLY",],): cv.ensure_list(cv.enum(SUPPORTED_CLIMATE_MODES_OPTIONS, upper=True)),
+            cv.Optional(CONF_SUPPORTED_MODES,default=["OFF","HEAT_COOL","COOL","HEAT","DRY","FAN_ONLY",],): cv.ensure_list(cv.enum(SUPPORTED_CLIMATE_MODES_OPTIONS, upper=True)),
             cv.Optional(CONF_SUPPORTED_FAN_MODES,default=["AUTO","QUIET","LOW","MIDDLE","MEDIUM","HIGH","FOCUS","DIFFUSE",],): cv.ensure_list(cv.enum(SUPPORTED_FAN_MODES_OPTIONS, upper=True)),
         }
     )
