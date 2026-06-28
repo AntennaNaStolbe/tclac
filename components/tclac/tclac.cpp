@@ -14,7 +14,7 @@ namespace tclac{
 
 ClimateTraits tclacClimate::traits() {
 	auto traits = climate::ClimateTraits();
-	traits.add_feature_flags(climate::CLIMATE_SUPPORTS_CURRENT_TEMPERATURE | climate::CLIMATE_SUPPORTS_TARGET_TEMPERATURE);
+	traits.add_feature_flags(climate::CLIMATE_SUPPORTS_CURRENT_TEMPERATURE);
 	
 	// Ответственно заявляю, что это все я взял у christoph5180
 	if (this->supported_modes_.empty()) {
