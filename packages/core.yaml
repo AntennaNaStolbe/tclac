@@ -318,3 +318,9 @@ climate:
   - platform: tclac
     name: "${device_name} Climate"
     id: ${device_name}climate
+    supported_fan_modes:
+      - "AUTO"
+      - "QUIET"
+      - "LOW"
+      - "MEDIUM"
+      - "HIGH"
