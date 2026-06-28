@@ -34,50 +34,65 @@ esphome:
           id(${device_name}climate).set_module_display_state(false);
         }
         
-        if (id(vswing).active_index() == 0){
+        if (id(vlouver).active_index() == 0){
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
-        } else if (id(vswing).active_index() == 1){
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
+        } else if (id(vlouver).active_index() == 1){
+          id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_UP);
+        } else if (id(vlouver).active_index() == 2){
+          id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
+        } else if (id(vlouver).active_index() == 3){
+          id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::CENTER);
+        } else if (id(vlouver).active_index() == 4){
+          id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
+        } else if (id(vlouver).active_index() == 5){
+          id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
+        } else if (id(vlouver).active_index() == 6){
+          id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
+        } else if (id(vlouver).active_index() == 7){
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UPSIDE);
-        } else if (id(vswing).active_index() == 2){
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
+        } else if (id(vlouver).active_index() == 8){
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::DOWNSIDE);
+          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
         }
 
-        if (id(hswing).active_index() == 0){
+        if (id(hlouver).active_index() == 0){
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
-        } else if (id(hswing).active_index() == 1){
-          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
-        } else if (id(hswing).active_index() == 2){
-          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::CENTER);
-        } else if (id(hswing).active_index() == 3){
-          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
-        }
-        
-        if (id(vfixing).active_index() == 0){
-          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
-        } else if (id(vfixing).active_index() == 1){
-          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_UP);
-        } else if (id(vfixing).active_index() == 2){
-          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
-        } else if (id(vfixing).active_index() == 3){
-          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::CENTER);
-        } else if (id(vfixing).active_index() == 4){
-          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
-        } else if (id(vfixing).active_index() == 5){
-          id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
-        }
-        
-        if (id(hfixing).active_index() == 0){
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
-        } else if (id(hfixing).active_index() == 1){
+        } else if (id(hlouver).active_index() == 1){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_LEFT);
-        } else if (id(hfixing).active_index() == 2){
+        } else if (id(hlouver).active_index() == 2){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LEFT);
-        } else if (id(hfixing).active_index() == 3){
+        } else if (id(hlouver).active_index() == 3){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::CENTER);
-        } else if (id(hfixing).active_index() == 4){
+        } else if (id(hlouver).active_index() == 4){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::RIGHT);
-        } else if (id(hfixing).active_index() == 5){
+        } else if (id(hlouver).active_index() == 5){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_RIGHT);
+        } else if (id(hlouver).active_index() == 6){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
+          id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
+        } else if (id(hlouver).active_index() == 7){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
+          id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
+        } else if (id(hlouver).active_index() == 8){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::CENTER);
+          id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
+        } else if (id(hlouver).active_index() == 9){
+          id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
+          id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         }
         if (id(beep_mode).state){
           id(${device_name}climate).set_beeper_state(true);
@@ -197,113 +212,106 @@ switch:
 
 # - Выпадающие списки
 select:
-  # Настройка вертикального качания
+  # Вертикальные заслонки (положение фиксации + направление качания)
   - platform: template
-    name: Vertical swing
-    id: vswing
+    name: Vertical louver
+    id: vlouver
     entity_category: config
     options:
-      - "Сверху вниз"
-      - "В верхней половине"
-      - "В нижней половине"
+      - "Фиксировано"
+      - "Вверху"
+      - "Верх-центр"
+      - "Центр"
+      - "Низ-центр"
+      - "Внизу"
+      - "Качание сверху-вниз"
+      - "Качание вверху"
+      - "Качание внизу"
     optimistic: true
     restore_value: true
     on_value:
       then:
         lambda: !lambda |-
-          if (id(vswing).active_index() == 0){
+          if (id(vlouver).active_index() == 0){
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
-          } else if (id(vswing).active_index() == 1){
-            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UPSIDE);
-          } else if (id(vswing).active_index() == 2){
-            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::DOWNSIDE);
-          }
-
-  # Настройка горизонтального качания
-  - platform: template
-    name: Horizontal swing
-    id: hswing
-    entity_category: config
-    options:
-      - "Слева направо"
-      - "В левой части"
-      - "В центре"
-      - "В правой части"
-    optimistic: true
-    restore_value: true
-    on_value:
-      then:
-        lambda: !lambda |-
-          if (id(hswing).active_index() == 0){
-            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
-          } else if (id(hswing).active_index() == 1){
-            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
-          } else if (id(hswing).active_index() == 2){
-            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::CENTER);
-          } else if (id(hswing).active_index() == 3){
-            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
-          }
-
-  # Настройка фиксации вертикальной заслонки
-  - platform: template
-    name: Vertical fixing
-    id: vfixing
-    entity_category: config
-    options:
-      - "Последнее положение"
-      - "До упора вверх"
-      - "В верхней половине"
-      - "По середине"
-      - "В нижней половине"
-      - "До упора вниз"
-    optimistic: true
-    restore_value: true
-    on_value:
-      then:
-        lambda: !lambda |-
-          if (id(vfixing).active_index() == 0){
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
-          } else if (id(vfixing).active_index() == 1){
+          } else if (id(vlouver).active_index() == 1){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_UP);
-          } else if (id(vfixing).active_index() == 2){
+          } else if (id(vlouver).active_index() == 2){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
-          } else if (id(vfixing).active_index() == 3){
+          } else if (id(vlouver).active_index() == 3){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::CENTER);
-          } else if (id(vfixing).active_index() == 4){
+          } else if (id(vlouver).active_index() == 4){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
-          } else if (id(vfixing).active_index() == 5){
+          } else if (id(vlouver).active_index() == 5){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
+          } else if (id(vlouver).active_index() == 6){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
+            id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
+          } else if (id(vlouver).active_index() == 7){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UPSIDE);
+            id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
+          } else if (id(vlouver).active_index() == 8){
+            id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::DOWNSIDE);
+            id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
           }
 
-  # Настройка фиксации горизонатальных заслонок
+  # Горизонтальные заслонки (положение фиксации + направление качания)
   - platform: template
-    name: Horizontal fixing
-    id: hfixing
+    name: Horizontal louver
+    id: hlouver
     entity_category: config
     options:
-      - "Последнее положение"
-      - "До упора влево"
-      - "В левой половине"
-      - "По середине"
-      - "В правой половине"
-      - "До упора вправо"
+      - "Фиксировано"
+      - "Слева"
+      - "Лево-центр"
+      - "Центр"
+      - "Право-центр"
+      - "Справа"
+      - "Качание слева-направо"
+      - "Качание слева"
+      - "Качание по центру"
+      - "Качание справа"
     optimistic: true
     restore_value: true
     on_value:
       then:
         lambda: !lambda |-
-          if (id(hfixing).active_index() == 0){
+          if (id(hlouver).active_index() == 0){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
-          } else if (id(hfixing).active_index() == 1){
+          } else if (id(hlouver).active_index() == 1){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_LEFT);
-          } else if (id(hfixing).active_index() == 2){
+          } else if (id(hlouver).active_index() == 2){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LEFT);
-          } else if (id(hfixing).active_index() == 3){
+          } else if (id(hlouver).active_index() == 3){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::CENTER);
-          } else if (id(hfixing).active_index() == 4){
+          } else if (id(hlouver).active_index() == 4){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::RIGHT);
-          } else if (id(hfixing).active_index() == 5){
+          } else if (id(hlouver).active_index() == 5){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_RIGHT);
+          } else if (id(hlouver).active_index() == 6){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
+            id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
+          } else if (id(hlouver).active_index() == 7){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
+            id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
+          } else if (id(hlouver).active_index() == 8){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::CENTER);
+            id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
+          } else if (id(hlouver).active_index() == 9){
+            id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
+            id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
           }
 
 climate:
