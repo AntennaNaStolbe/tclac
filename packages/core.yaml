@@ -35,62 +35,81 @@ esphome:
         }
         
         if (id(vlouver).active_index() == 0){
+          id(${device_name}climate).set_vertical_swing_state(false);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
         } else if (id(vlouver).active_index() == 1){
+          id(${device_name}climate).set_vertical_swing_state(false);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_UP);
         } else if (id(vlouver).active_index() == 2){
+          id(${device_name}climate).set_vertical_swing_state(false);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
         } else if (id(vlouver).active_index() == 3){
+          id(${device_name}climate).set_vertical_swing_state(false);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::CENTER);
         } else if (id(vlouver).active_index() == 4){
+          id(${device_name}climate).set_vertical_swing_state(false);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
         } else if (id(vlouver).active_index() == 5){
+          id(${device_name}climate).set_vertical_swing_state(false);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
         } else if (id(vlouver).active_index() == 6){
+          id(${device_name}climate).set_vertical_swing_state(true);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
         } else if (id(vlouver).active_index() == 7){
+          id(${device_name}climate).set_vertical_swing_state(true);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UPSIDE);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
         } else if (id(vlouver).active_index() == 8){
+          id(${device_name}climate).set_vertical_swing_state(true);
           id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::DOWNSIDE);
           id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
         }
 
         if (id(hlouver).active_index() == 0){
+          id(${device_name}climate).set_horizontal_swing_state(false);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         } else if (id(hlouver).active_index() == 1){
+          id(${device_name}climate).set_horizontal_swing_state(false);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_LEFT);
         } else if (id(hlouver).active_index() == 2){
+          id(${device_name}climate).set_horizontal_swing_state(false);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LEFT);
         } else if (id(hlouver).active_index() == 3){
+          id(${device_name}climate).set_horizontal_swing_state(false);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::CENTER);
         } else if (id(hlouver).active_index() == 4){
+          id(${device_name}climate).set_horizontal_swing_state(false);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::RIGHT);
         } else if (id(hlouver).active_index() == 5){
+          id(${device_name}climate).set_horizontal_swing_state(false);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_RIGHT);
         } else if (id(hlouver).active_index() == 6){
+          id(${device_name}climate).set_horizontal_swing_state(true);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         } else if (id(hlouver).active_index() == 7){
+          id(${device_name}climate).set_horizontal_swing_state(true);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         } else if (id(hlouver).active_index() == 8){
+          id(${device_name}climate).set_horizontal_swing_state(true);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::CENTER);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         } else if (id(hlouver).active_index() == 9){
+          id(${device_name}climate).set_horizontal_swing_state(true);
           id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
           id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
         }
@@ -233,30 +252,39 @@ select:
       then:
         lambda: !lambda |-
           if (id(vlouver).active_index() == 0){
+            id(${device_name}climate).set_vertical_swing_state(false);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
           } else if (id(vlouver).active_index() == 1){
+            id(${device_name}climate).set_vertical_swing_state(false);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_UP);
           } else if (id(vlouver).active_index() == 2){
+            id(${device_name}climate).set_vertical_swing_state(false);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::UP);
           } else if (id(vlouver).active_index() == 3){
+            id(${device_name}climate).set_vertical_swing_state(false);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::CENTER);
           } else if (id(vlouver).active_index() == 4){
+            id(${device_name}climate).set_vertical_swing_state(false);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::DOWN);
           } else if (id(vlouver).active_index() == 5){
+            id(${device_name}climate).set_vertical_swing_state(false);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::MAX_DOWN);
           } else if (id(vlouver).active_index() == 6){
+            id(${device_name}climate).set_vertical_swing_state(true);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UP_DOWN);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
           } else if (id(vlouver).active_index() == 7){
+            id(${device_name}climate).set_vertical_swing_state(true);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::UPSIDE);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
           } else if (id(vlouver).active_index() == 8){
+            id(${device_name}climate).set_vertical_swing_state(true);
             id(${device_name}climate).set_vertical_swing_direction(esphome::tclac::VerticalSwingDirection::DOWNSIDE);
             id(${device_name}climate).set_vertical_airflow(esphome::tclac::AirflowVerticalDirection::LAST);
           }
@@ -283,33 +311,43 @@ select:
       then:
         lambda: !lambda |-
           if (id(hlouver).active_index() == 0){
+            id(${device_name}climate).set_horizontal_swing_state(false);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
           } else if (id(hlouver).active_index() == 1){
+            id(${device_name}climate).set_horizontal_swing_state(false);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_LEFT);
           } else if (id(hlouver).active_index() == 2){
+            id(${device_name}climate).set_horizontal_swing_state(false);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LEFT);
           } else if (id(hlouver).active_index() == 3){
+            id(${device_name}climate).set_horizontal_swing_state(false);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::CENTER);
           } else if (id(hlouver).active_index() == 4){
+            id(${device_name}climate).set_horizontal_swing_state(false);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::RIGHT);
           } else if (id(hlouver).active_index() == 5){
+            id(${device_name}climate).set_horizontal_swing_state(false);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::MAX_RIGHT);
           } else if (id(hlouver).active_index() == 6){
+            id(${device_name}climate).set_horizontal_swing_state(true);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFT_RIGHT);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
           } else if (id(hlouver).active_index() == 7){
+            id(${device_name}climate).set_horizontal_swing_state(true);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::LEFTSIDE);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
           } else if (id(hlouver).active_index() == 8){
+            id(${device_name}climate).set_horizontal_swing_state(true);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::CENTER);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
           } else if (id(hlouver).active_index() == 9){
+            id(${device_name}climate).set_horizontal_swing_state(true);
             id(${device_name}climate).set_horizontal_swing_direction(esphome::tclac::HorizontalSwingDirection::RIGHTSIDE);
             id(${device_name}climate).set_horizontal_airflow(esphome::tclac::AirflowHorizontalDirection::LAST);
           }
@@ -324,3 +362,5 @@ climate:
       - "LOW"
       - "MEDIUM"
       - "HIGH"
+    supported_swing_modes:
+      - "OFF"

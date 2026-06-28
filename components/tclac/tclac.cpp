@@ -36,11 +36,12 @@ ClimateTraits tclacClimate::traits() {
 		for (auto fan_mode : this->supported_fan_modes_)
 			traits.add_supported_fan_mode(fan_mode);
 	}
-	if (this->supported_swing_modes_.empty()) {
-		traits.add_supported_swing_mode(climate::CLIMATE_SWING_OFF);
-	} else {
-		for (auto swing_mode : this->supported_swing_modes_)
-			traits.add_supported_swing_mode(swing_mode);
+	if (!this->supported_swing_modes_.empty()) {
+		for (auto swing_mode : this->supported_swing_modes_) {
+			if (swing_mode != climate::CLIMATE_SWING_OFF) {
+				traits.add_supported_swing_mode(swing_mode);
+			}
+		}
 	}
 
 	return traits;
@@ -337,24 +338,12 @@ void tclacClimate::takeControl() {
 		}
 	}
 	
-	// Устанавливаем режим качания заслонок
-	switch(this->swing_mode) {
-		case climate::CLIMATE_SWING_OFF:
-			dataTX[10]	+= 0b00000000;
-			dataTX[11]	+= 0b00000000;
-			break;
-		case climate::CLIMATE_SWING_VERTICAL:
-			dataTX[10]	+= 0b00111000;
-			dataTX[11]	+= 0b00000000;
-			break;
-		case climate::CLIMATE_SWING_HORIZONTAL:
-			dataTX[10]	+= 0b00000000;
-			dataTX[11]	+= 0b00001000;
-			break;
-		case climate::CLIMATE_SWING_BOTH:
-			dataTX[10]	+= 0b00111000;
-			dataTX[11]	+= 0b00001000;  
-			break;
+	// Управление качанием заслонок (ON/OFF) через отдельные флаги
+	if (vertical_swing_requested_) {
+		dataTX[10] += 0b00111000;
+	}
+	if (horizontal_swing_requested_) {
+		dataTX[11] += 0b00001000;
 	}
 	
 	// Устанавливаем предустановки кондиционера
@@ -694,6 +683,20 @@ void tclacClimate::set_supported_swing_modes(climate::ClimateSwingModeMask swing
 // Получение доступных предустановок
 void tclacClimate::set_supported_presets(climate::ClimatePresetMask presets) {
   this->supported_presets_ = presets;
+}
+
+void tclacClimate::set_vertical_swing_state(bool state) {
+	this->vertical_swing_requested_ = state;
+	if (force_mode_status_ && allow_take_control) {
+		tclacClimate::takeControl();
+	}
+}
+
+void tclacClimate::set_horizontal_swing_state(bool state) {
+	this->horizontal_swing_requested_ = state;
+	if (force_mode_status_ && allow_take_control) {
+		tclacClimate::takeControl();
+	}
 }
 
 

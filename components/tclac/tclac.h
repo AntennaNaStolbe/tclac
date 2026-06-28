@@ -104,6 +104,8 @@ class tclacClimate : public climate::Climate, public esphome::uart::UARTDevice, 
 		int target_temperature_set = 0;
 		uint8_t switch_climate_mode = 0;
 		bool allow_take_control = false;
+		bool vertical_swing_requested_ = false;
+		bool horizontal_swing_requested_ = false;
 		
 		esphome::climate::ClimateTraits traits_;
 		
@@ -136,6 +138,8 @@ class tclacClimate : public climate::Climate, public esphome::uart::UARTDevice, 
 		void set_supported_modes(climate::ClimateModeMask modes);
 		void set_supported_fan_modes(climate::ClimateFanModeMask fan_modes);
 		void set_supported_swing_modes(climate::ClimateSwingModeMask swing_modes);
+		void set_vertical_swing_state(bool state);
+		void set_horizontal_swing_state(bool state);
 		
 	protected:
 		GPIOPin *rx_led_pin_;
