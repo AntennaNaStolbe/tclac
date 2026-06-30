@@ -130,15 +130,5 @@ template<typename... Ts> class ForceOffAction : public Action<Ts...> {
   tclacClimate *parent_;
 };
 
-// Триггер: изменение скорости вентилятора
-class FanModeChangeTrigger : public Trigger<ClimateFanMode> {
- public:
-  explicit FanModeChangeTrigger(tclacClimate *parent) {
-    parent->add_on_fan_mode_callback([this](ClimateFanMode fan_mode) {
-      this->trigger(fan_mode);
-    });
-  }
-};
-
 }  // namespace tclac
 }  // namespace esphome

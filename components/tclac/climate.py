@@ -15,14 +15,12 @@ from esphome.const import (
     CONF_TARGET_TEMPERATURE,
     CONF_SUPPORTED_FAN_MODES,
     CONF_SUPPORTED_SWING_MODES,
-    CONF_TRIGGER_ID,
 )
 
 from esphome.components.climate import (
     ClimateMode,
     ClimatePreset,
     ClimateSwingMode,
-    ClimateFanMode,
     CONF_CURRENT_TEMPERATURE,
 )
 
@@ -162,9 +160,6 @@ CONFIG_SCHEMA = cv.All(
             cv.Optional(CONF_SUPPORTED_SWING_MODES,default=["OFF","VERTICAL","HORIZONTAL","BOTH",],): cv.ensure_list(cv.enum(SUPPORTED_SWING_MODES_OPTIONS, upper=True)),
             cv.Optional(CONF_SUPPORTED_MODES,default=["OFF","HEAT_COOL","COOL","HEAT","DRY","FAN_ONLY",],): cv.ensure_list(cv.enum(SUPPORTED_CLIMATE_MODES_OPTIONS, upper=True)),
             cv.Optional(CONF_SUPPORTED_FAN_MODES,default=["AUTO","QUIET","LOW","MIDDLE","MEDIUM","HIGH","FOCUS","DIFFUSE",],): cv.ensure_list(cv.enum(SUPPORTED_FAN_MODES_OPTIONS, upper=True)),
-            cv.Optional("on_fan_mode"): automation.validate_automation({
-                cv.GenerateID(CONF_TRIGGER_ID): cv.declare_id(FanModeChangeTrigger),
-            }),
         }
     )
     .extend(uart.UART_DEVICE_SCHEMA)
@@ -184,7 +179,6 @@ ModuleDisplayOffAction = tclac_ns.class_("ModuleDisplayOffAction", automation.Ac
 HorizontalAirflowAction = tclac_ns.class_("HorizontalAirflowAction", automation.Action)
 VerticalSwingDirectionAction = tclac_ns.class_("VerticalSwingDirectionAction", automation.Action)
 HorizontalSwingDirectionAction = tclac_ns.class_("HorizontalSwingDirectionAction", automation.Action)
-FanModeChangeTrigger = tclac_ns.class_("FanModeChangeTrigger", automation.Trigger)
 
 TCLAC_ACTION_BASE_SCHEMA = automation.maybe_simple_id({cv.GenerateID(CONF_ID): cv.use_id(tclacClimate),})
 
@@ -341,10 +335,6 @@ def to_code(config):
         cg.add(var.set_supported_fan_modes(config[CONF_SUPPORTED_FAN_MODES]))
     if CONF_SUPPORTED_SWING_MODES in config:
         cg.add(var.set_supported_swing_modes(config[CONF_SUPPORTED_SWING_MODES]))
-
-    for conf in config.get("on_fan_mode", []):
-        trigger = cg.new_Pvariable(conf[CONF_TRIGGER_ID], var)
-        yield automation.build_automation(trigger, [(ClimateFanMode, "x")], conf)
 
     if CONF_TX_LED in config:
         cg.add_define("CONF_TX_LED")
