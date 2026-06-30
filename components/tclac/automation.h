@@ -134,8 +134,8 @@ template<typename... Ts> class ForceOffAction : public Action<Ts...> {
 class FanModeChangeTrigger : public Trigger<ClimateFanMode> {
  public:
   explicit FanModeChangeTrigger(tclacClimate *parent) {
-    parent->add_on_state_callback([this, parent]() {
-      this->trigger(parent->fan_mode);
+    parent->add_on_fan_mode_callback([this](ClimateFanMode fan_mode) {
+      this->trigger(fan_mode);
     });
   }
 };
