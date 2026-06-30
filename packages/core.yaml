@@ -419,3 +419,14 @@ climate:
       - "DIFFUSE"
     supported_swing_modes:
       - "OFF"
+    on_state:
+      then:
+        lambda: !lambda |-
+          if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_AUTO) id(fan_speed).publish_state("Авто");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_QUIET) id(fan_speed).publish_state("Ночной");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_LOW) id(fan_speed).publish_state("1");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_MIDDLE) id(fan_speed).publish_state("2");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_MEDIUM) id(fan_speed).publish_state("3");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_HIGH) id(fan_speed).publish_state("4");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_FOCUS) id(fan_speed).publish_state("5");
+          else if (id(${device_name}climate).fan_mode == climate::CLIMATE_FAN_DIFFUSE) id(fan_speed).publish_state("Турбо");
