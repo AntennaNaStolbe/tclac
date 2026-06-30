@@ -143,8 +143,6 @@ def validate_visual(config):
         config[CONF_VISUAL] = {CONF_MIN_TEMPERATURE: TCLAC_MIN_TEMPERATURE,CONF_MAX_TEMPERATURE: TCLAC_MAX_TEMPERATURE,CONF_TEMPERATURE_STEP: {CONF_TARGET_TEMPERATURE: TCLAC_TARGET_TEMPERATURE_STEP,CONF_CURRENT_TEMPERATURE: TCLAC_CURRENT_TEMPERATURE_STEP,},}
     return config
 
-FanModeChangeTrigger = tclac_ns.class_("FanModeChangeTrigger", automation.Trigger)
-
 # Проверка конфигурации компонента и принятие значений по умолчанию
 CONFIG_SCHEMA = cv.All(
     climate.climate_schema(tclacClimate)
@@ -186,6 +184,7 @@ ModuleDisplayOffAction = tclac_ns.class_("ModuleDisplayOffAction", automation.Ac
 HorizontalAirflowAction = tclac_ns.class_("HorizontalAirflowAction", automation.Action)
 VerticalSwingDirectionAction = tclac_ns.class_("VerticalSwingDirectionAction", automation.Action)
 HorizontalSwingDirectionAction = tclac_ns.class_("HorizontalSwingDirectionAction", automation.Action)
+FanModeChangeTrigger = tclac_ns.class_("FanModeChangeTrigger", automation.Trigger)
 
 TCLAC_ACTION_BASE_SCHEMA = automation.maybe_simple_id({cv.GenerateID(CONF_ID): cv.use_id(tclacClimate),})
 
